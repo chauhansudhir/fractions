@@ -68,15 +68,17 @@ const BakeMode = () => {
             <h2 style={{ color: '#10B981', marginTop: '24px' }}>
               {challenge.emoji} Perfect! Time to bake! {challenge.emoji}
             </h2>
-            <button onClick={nextChallenge} className="btn-modern-primary" style={{ marginTop: '16px' }}>
-              Next Challenge ➡️
-            </button>
           </div>
         )}
 
-        <button onClick={() => setAmount(0)} className="btn-modern-danger" style={{ marginTop: '16px' }}>
-          Empty Bowl
-        </button>
+        <div className="button-group" style={{ marginTop: '16px', gap: '12px' }}>
+          <button onClick={() => setAmount(0)} className="btn-modern-danger">
+            Empty Bowl
+          </button>
+          <button onClick={nextChallenge} className="btn-modern-primary">
+            Next Challenge ➡️
+          </button>
+        </div>
       </div>
     </div>
   );
