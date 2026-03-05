@@ -1,0 +1,41 @@
+/* Instruction Box */
+.instruction-box {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 32px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+  animation: slideUp 0.5s ease-out;
+}
+
+.instruction-box h2 {
+  font-size: 1.75rem;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.instruction-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.instruction-box strong {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .instruction-box {
+    padding: 24px;
+  }
+
+  .instruction-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .instruction-box p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,30 @@
+/* Back Button */
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: white;
+  border: 2px solid var(--primary);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.back-button:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
