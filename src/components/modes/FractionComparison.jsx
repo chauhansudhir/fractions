@@ -152,7 +152,7 @@ const FractionComparison = ({ numerator = 1 }) => {
       {/* Rule Explanation */}
       <div className="rule-box">
         <h2>{rule.title}</h2>
-        <p style={{ fontSize: "1.1rem", fontWeight: "600", color: "#6B7280" }}>
+        <p style={{ fontSize: "1.1rem", fontWeight: "600", color: "white", textShadow: "0 2px 4px rgba(0,0,0,0.2)" }}>
           {rule.description}
         </p>
       </div>

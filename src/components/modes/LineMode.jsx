@@ -16,15 +16,30 @@ const LineMode = () => {
 
       <div className="line-container">
         <div className="number-line">
-          {[0, 0.25, 0.5, 0.75, 1].map(t => (
-            <div key={t} className="line-marker">
-              <div className="marker-tick" />
-              <span className="marker-label">
-                {t === 0 ? "0" : t === 1 ? "1" : t === 0.5 ? "1/2" : t === 0.25 ? "1/4" : "3/4"}
-              </span>
+          {/* Start (0) marker */}
+          <div style={{ position: 'absolute', left: '0%', top: '0' }} className="line-marker">
+            <div className="marker-tick" />
+            <span className="marker-label">0</span>
+          </div>
+
+          {/* End (1) marker */}
+          <div style={{ position: 'absolute', left: '100%', top: '0', transform: 'translateX(-100%)' }} className="line-marker">
+            <div className="marker-tick" />
+            <span className="marker-label">1</span>
+          </div>
+
+          {/* Middle tick marks (no labels) */}
+          {Array.from({ length: 9 }).map((_, i) => (
+            <div 
+              key={i} 
+              style={{ position: 'absolute', left: `${(i + 1) * 10}%`, top: '0', transform: 'translateX(-50%)' }} 
+              className="line-marker"
+            >
+              <div className="marker-tick-small" />
             </div>
           ))}
 
+          {/* Draggable pin */}
           <div
             style={{
               position: 'absolute',
@@ -33,7 +48,8 @@ const LineMode = () => {
               top: '-55px',
               cursor: 'grab',
               transition: 'none',
-              filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))'
+              filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))',
+              transform: 'translateX(-50%)'
             }}
             onMouseDown={(e) => {
               const lineEl = e.currentTarget.parentElement;
